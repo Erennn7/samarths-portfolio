@@ -133,14 +133,14 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold gradient-text mb-6">Get In Touch</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-6">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6"></div>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto px-4">
             Ready to bring your ideas to life? Let's collaborate on your next project
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -148,12 +148,12 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
+            <div className="glass-card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center">
                 <MessageCircle className="mr-3 text-purple-400" />
                 Let's Connect
               </h3>
-              <p className="text-white/70 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/70 mb-6 sm:mb-8 leading-relaxed">
                 I'm always excited to work on innovative projects and help bring creative ideas to life. 
                 Whether you need a full-stack web application, AI-powered solution, or technical consultation, 
                 I'm here to help.
@@ -171,15 +171,15 @@ export default function Contact() {
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                       whileHover={{ x: 10 }}
-                      className="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                      className="flex items-center p-3 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
                     >
-                      <div className={`p-3 rounded-lg bg-gradient-to-r ${info.color} mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="text-white" size={20} />
-                      </div>
-                      <div>
-                        <div className="text-sm text-white/60">{info.label}</div>
-                        <div className="font-medium">{info.value}</div>
-                      </div>
+                                              <div className={`p-2 sm:p-3 rounded-lg bg-gradient-to-r ${info.color} mr-3 sm:mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="text-white" size={18} />
+                        </div>
+                        <div>
+                          <div className="text-xs sm:text-sm text-white/60">{info.label}</div>
+                          <div className="text-sm sm:text-base font-medium">{info.value}</div>
+                        </div>
                     </motion.a>
                   );
                 })}
@@ -188,7 +188,7 @@ export default function Contact() {
               {/* Social Links */}
               <div className="mt-8 pt-6 border-t border-white/10">
                 <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 sm:space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
@@ -200,10 +200,10 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         whileTap={{ scale: 0.9 }}
-                        className={`p-3 glass-card ${social.color} transition-colors duration-300`}
+                        className={`p-2 sm:p-3 glass-card ${social.color} transition-colors duration-300`}
                         aria-label={social.label}
                       >
-                        <IconComponent size={20} />
+                                                  <IconComponent size={18} />
                       </motion.a>
                     );
                   })}
@@ -218,10 +218,10 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+            <div className="glass-card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

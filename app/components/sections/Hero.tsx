@@ -173,7 +173,7 @@ export default function Hero() {
           {/* Animated Name with Enhanced Effects */}
           <motion.div className="relative">
             <motion.h1
-              className="text-6xl md:text-8xl font-black relative"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black relative"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 100 }}
@@ -246,7 +246,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               exit={{ opacity: 0, y: -50, rotateX: 90 }}
               transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-              className="text-2xl md:text-4xl font-light text-white/80 typing-animation perspective-hover"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-white/80 typing-animation perspective-hover"
             >
               {titles[currentTitle]}
             </motion.h2>
@@ -257,7 +257,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.8, type: "spring" }}
-            className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed reveal-animation"
+            className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed reveal-animation px-4"
           >
             B.Tech I.T. student at Walchand Institute of Technology, crafting innovative digital solutions 
             and leading the future of web development with cutting-edge technologies.
@@ -268,11 +268,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-12 px-4"
           >
             <MagneticButton
               href="#projects"
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white flex items-center justify-center space-x-2 neon-glow liquid-button enhanced-hover"
+              className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white flex items-center justify-center space-x-2 neon-glow liquid-button enhanced-hover text-sm sm:text-base"
             >
               <span>View My Work</span>
               <ExternalLink size={18} />
@@ -281,7 +281,7 @@ export default function Hero() {
             <MagneticButton
               href="/resume.pdf"
               download
-              className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl font-semibold text-white flex items-center justify-center space-x-2 enhanced-hover wave-animation"
+              className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl font-semibold text-white flex items-center justify-center space-x-2 enhanced-hover wave-animation text-sm sm:text-base"
             >
               <span>Download Resume</span>
               <Download size={18} />
@@ -289,7 +289,7 @@ export default function Hero() {
 
             <MagneticButton
               href="#contact"
-              className="px-8 py-4 glass-button font-semibold text-white flex items-center justify-center space-x-2 enhanced-hover wave-animation"
+              className="px-6 py-3 sm:px-8 sm:py-4 glass-button font-semibold text-white flex items-center justify-center space-x-2 enhanced-hover wave-animation text-sm sm:text-base"
             >
               <span>Get In Touch</span>
               <Mail size={18} />
@@ -301,7 +301,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
-            className="flex justify-center space-x-6 mt-8"
+            className="flex justify-center space-x-4 sm:space-x-6 mt-6 sm:mt-8"
           >
             {[
               { icon: Github, href: 'https://github.com/Erennn7', label: 'GitHub', color: 'hover:text-gray-400' },
@@ -311,7 +311,7 @@ export default function Hero() {
               <motion.a
                 key={label}
                 href={href}
-                className={`p-3 glass-card ${color} transition-all duration-300 magnetic-hover enhanced-hover`}
+                className={`p-2 sm:p-3 glass-card ${color} transition-all duration-300 magnetic-hover enhanced-hover`}
                 whileHover={{ 
                   scale: 1.2, 
                   rotate: 5,
@@ -320,7 +320,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.9 }}
                 aria-label={label}
               >
-                <Icon size={24} />
+                <Icon size={20} className="sm:w-6 sm:h-6" />
               </motion.a>
             ))}
           </motion.div>
@@ -330,7 +330,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2, duration: 0.8 }}
-            className="flex justify-center space-x-4 mt-8"
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-6 sm:mt-8 px-4"
           >
             {[
               { label: '10.0 CGPA', icon: '🎓' },
@@ -339,7 +339,7 @@ export default function Hero() {
             ].map((badge, index) => (
               <motion.div
                 key={badge.label}
-                className="glass-card px-4 py-2 text-sm font-medium elastic-hover"
+                className="glass-card px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium elastic-hover"
                 whileHover={{ 
                   scale: 1.1,
                   boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)"

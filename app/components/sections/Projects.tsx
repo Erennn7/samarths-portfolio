@@ -306,7 +306,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
@@ -322,7 +322,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {[
             { label: 'Projects Completed', value: '10+', icon: Code },
@@ -334,15 +334,15 @@ export default function Projects() {
             return (
               <motion.div
                 key={stat.label}
-                className="glass-card p-6 text-center enhanced-hover"
+                className="glass-card p-4 sm:p-6 text-center enhanced-hover"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <IconComponent className="mx-auto mb-3 text-purple-400" size={28} />
-                <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-sm text-white/60">{stat.label}</div>
+                <IconComponent className="mx-auto mb-2 sm:mb-3 text-purple-400" size={24} />
+                <div className="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-white/60">{stat.label}</div>
               </motion.div>
             );
           })}

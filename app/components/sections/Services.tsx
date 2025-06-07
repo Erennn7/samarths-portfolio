@@ -194,7 +194,7 @@ export default function Services() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -204,7 +204,7 @@ export default function Services() {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.8, delay: (index * 0.1) + 0.4 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="glass-card p-6 relative overflow-hidden group"
+                className="glass-card p-4 sm:p-6 relative overflow-hidden group"
               >
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -221,7 +221,7 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-white/70 text-sm mb-6 leading-relaxed">{service.description}</p>
 
                   {/* Features */}
@@ -245,7 +245,7 @@ export default function Services() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleGetStartedClick}
-                    className="w-full flex items-center justify-center space-x-2 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300"
+                    className="w-full flex items-center justify-center space-x-2 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-300 text-sm sm:text-base"
                   >
                     <span>Get Started</span>
                     <ArrowRight size={16} />
@@ -266,10 +266,10 @@ export default function Services() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 glass-card p-8 text-center"
+          className="mt-12 sm:mt-20 glass-card p-6 sm:p-8 text-center"
         >
-          <h3 className="text-3xl font-bold gradient-text mb-6">Why Choose My Services?</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h3 className="text-2xl sm:text-3xl font-bold gradient-text mb-6">Why Choose My Services?</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 title: 'Proven Excellence',
@@ -295,7 +295,7 @@ export default function Services() {
                 className="text-center"
               >
                 <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h4 className="text-xl font-bold mb-3">{benefit.title}</h4>
+                <h4 className="text-lg sm:text-xl font-bold mb-3">{benefit.title}</h4>
                 <p className="text-white/70 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
