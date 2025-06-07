@@ -24,7 +24,7 @@ const projects = [
       'Appointment booking and healthcare provider network'
     ],
     image: 'https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=800',
-    demo: '#',
+    demo: 'https://github.com/Orthodox-64/CureConnect',
     github: 'https://github.com/Orthodox-64/CureConnect',
     status: 'Development',
     year: '2025'
@@ -164,13 +164,25 @@ const ProjectCard = ({ project, index, onClick }: { project: any, index: number,
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
-              <div className="flex-1 flex items-center justify-center py-2 bg-white/20 backdrop-blur-md rounded-lg text-sm font-medium">
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center py-2 bg-white/20 backdrop-blur-md rounded-lg text-sm font-medium hover:bg-white/30 transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <Play size={14} className="mr-2" />
                 Preview
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white/20 backdrop-blur-md rounded-lg">
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center p-2 bg-white/20 backdrop-blur-md rounded-lg hover:bg-white/30 transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <Github size={14} />
-              </div>
+              </a>
             </motion.div>
           </div>
         </motion.div>
@@ -224,7 +236,10 @@ const ProjectCard = ({ project, index, onClick }: { project: any, index: number,
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 + index * 0.1 }}
           >
-            <motion.button
+            <motion.a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center space-x-2 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-sm font-medium liquid-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -232,15 +247,18 @@ const ProjectCard = ({ project, index, onClick }: { project: any, index: number,
             >
               <Play size={14} />
               <span>Demo</span>
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center p-2 glass-button rounded-lg"
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
             >
               <Github size={14} />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
@@ -475,6 +493,8 @@ export default function Projects() {
                   >
                     <motion.a
                       href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold liquid-button enhanced-hover"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -484,6 +504,8 @@ export default function Projects() {
                     </motion.a>
                     <motion.a
                       href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-6 py-3 glass-button rounded-xl font-semibold enhanced-hover"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
