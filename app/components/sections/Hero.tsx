@@ -179,10 +179,19 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 100 }}
             >
               <motion.span 
-                className="gradient-text text-shimmer glow-border"
+                className="bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-extrabold"
+                style={{
+                  background: "linear-gradient(45deg, #a855f7 0%, #ec4899 50%, #06b6d4 100%)",
+                  backgroundSize: "200% 200%",
+                  animation: "gradientShift 3s ease-in-out infinite",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  filter: "drop-shadow(0 0 15px rgba(139, 92, 246, 0.7)) drop-shadow(0 0 30px rgba(236, 72, 153, 0.5))"
+                }}
                 whileHover={{ 
                   scale: 1.05,
-                  textShadow: "0 0 20px rgba(139, 92, 246, 0.8)"
+                  filter: "drop-shadow(0 0 25px rgba(139, 92, 246, 0.9)) drop-shadow(0 0 50px rgba(236, 72, 153, 0.7))"
                 }}
               >
                 Samarth
