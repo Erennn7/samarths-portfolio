@@ -105,12 +105,14 @@ export default function Hero() {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }
   }, []);
 
-  const parallaxX = useTransform(useMotionValue(mousePosition.x), [0, window.innerWidth || 1920], [-50, 50]);
-  const parallaxY = useTransform(useMotionValue(mousePosition.y), [0, window.innerHeight || 1080], [-50, 50]);
+  const parallaxX = useTransform(useMotionValue(mousePosition.x), [0, typeof window !== 'undefined' ? window.innerWidth : 1920], [-50, 50]);
+  const parallaxY = useTransform(useMotionValue(mousePosition.y), [0, typeof window !== 'undefined' ? window.innerHeight : 1080], [-50, 50]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden particle-bg cyber-grid">

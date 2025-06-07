@@ -108,7 +108,9 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const handleConsultancyClick = () => {
-    window.open('https://varchas-orthodox-64s-projects.vercel.app', '_blank');
+    if (typeof window !== 'undefined') {
+      window.open('https://varchas-orthodox-64s-projects.vercel.app', '_blank');
+    }
   };
 
   const handleGetStartedClick = () => {
